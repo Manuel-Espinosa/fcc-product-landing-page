@@ -1,0 +1,283 @@
+:root{
+    --main-radius:3px;
+    --main-padding:5px;
+}
+body{
+    background-color:lightgrey;
+}
+.container{
+    display: grid;
+    height: 100vh;  
+    margin: 0;
+    padding: 0;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 0.3fr 2fr 0.5fr 1.5fr 0.3fr;
+    grid-template-areas: 
+    "header header header"
+    "main main main"
+    "desc desc desc"
+    "price1 price2 price3"
+    "footer footer footer";
+    gap: .5rem;
+    
+
+}
+
+header{
+    
+    grid-area: header;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    
+    display: flex;
+    justify-content: space-between;
+}
+
+#header-img{
+    
+}
+
+nav{
+    display: flex;
+    width: 50vh;
+    height: 3rem;
+    justify-content: center;
+    transition: width 200ms ease;
+
+}
+
+nav:hover{
+    width: 30rem;
+}
+
+nav:hover .link-text{
+    display: block;
+}
+
+.nav-bar-nav{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.nav-item{
+    width: 100%;
+
+}
+
+.nav-link{
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    text-decoration: none;
+    filter: grayscale(25%) opacity(0.9);
+
+}
+
+.nav-link:hover {
+    filter: grayscale(0%) opacity(1);
+    background:dimgray;
+    
+}
+
+.nav-link svg{
+    max-height: 30px;
+    margin: 0 1.5rem;
+    color: darkred;
+    
+
+}
+
+.link-text{
+    display: none;
+    margin-left: 1rem;
+    color: #000;
+
+}
+
+main{
+    grid-area: main;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 30%;
+}
+
+#form-container h3{
+    font-size: 35px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#form-container p{
+    font-size: 14px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#form-container #submit{
+    background-color: gold;    
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#video-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#video-container iframe{
+
+    width: 560px;
+    height: 320px;
+
+}
+
+#desc{
+    
+    grid-area: desc;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+}
+
+.price{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#top{
+    background-color: crimson;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-color: #000;
+    border-style: solid;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    color:white;
+}
+#bottom{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-color: #000;
+    border-style: solid;
+    border-top: 0ch;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+
+}
+
+#price1{
+    grid-area: price1;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+#price2{
+    grid-area: price2;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+#price3{
+    grid-area: price3;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+footer{
+    background-color: darkgrey;
+    grid-area: footer;
+    border-radius: var(--main-radius);
+    padding-bottom: var(--main-padding);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:black;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+@media only screen and (max-width: 550px) {
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 2fr 1fr 1.5fr 1.5fr 1.5fr 0.5fr;
+        grid-template-areas: 
+        "header"
+        "main"
+        "desc"
+        "price1"
+        "price2"
+        "price3"
+        "footer";
+    }
+
+    main{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+
+    }
+
+    #form-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        width: 240px;
+    }
+
+    #video-container{
+        display: flex;
+        align-items: center;
+        
+    }
+    
+    #video-container iframe{
+    
+        width: 240px;
+        height: 120px;
+    
+    }
+
+    #desc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 240px;
+    }
+
+    .price{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 340px;
+    }
+
+}
